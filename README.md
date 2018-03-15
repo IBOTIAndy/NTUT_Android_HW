@@ -11,4 +11,6 @@
 為了方便切過去（？），所以我就做了這個目錄啦～
 
 + [HW1](https://gitea.ntut.com.tw/PinLin/NTUT_Android_HW/src/branch/HW1) - 婚姻建議
++ [HW2](https://gitea.ntut.com.tw/PinLin/NTUT_Android_HW/src/branch/HW2) - 婚姻建議（English）
+
 
