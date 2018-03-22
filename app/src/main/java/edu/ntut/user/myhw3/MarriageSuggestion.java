@@ -20,7 +20,7 @@ public class MarriageSuggestion {
                     else if (numFamily >= 4 && numFamily <= 10)
                         strSug += "趕快結婚";
                     else
-                        strSug += "開始找對象";
+                        strSug += "還不急";
                     break;
 
                 case 2:
@@ -29,14 +29,14 @@ public class MarriageSuggestion {
                     else if (numFamily >= 4 && numFamily <= 10)
                         strSug += "開始找對象";
                     else
-                        strSug += "趕快結婚";
+                        strSug += "還不急";
                     break;
 
                 case 3:
                     if (numFamily < 4)
-                        strSug += "還不急";
+                        strSug += "開始找對象";
                     else if (numFamily >= 4 && numFamily <= 10)
-                        strSug += "還不急";
+                        strSug += "趕快結婚";
                     else
                         strSug += "開始找對象";
                     break;
@@ -50,7 +50,7 @@ public class MarriageSuggestion {
                     else if (numFamily >= 4 && numFamily <= 10)
                         strSug += "趕快結婚";
                     else
-                        strSug += "開始找對象";
+                        strSug += "還不急";
                     break;
 
                 case 2:
@@ -59,14 +59,14 @@ public class MarriageSuggestion {
                     else if (numFamily >= 4 && numFamily <= 10)
                         strSug += "開始找對象";
                     else
-                        strSug += "趕快結婚";
+                        strSug += "還不急";
                     break;
 
                 case 3:
                     if (numFamily < 4)
-                        strSug += "還不急";
+                        strSug += "開始找對象";
                     else if (numFamily >= 4 && numFamily <= 10)
-                        strSug += "還不急";
+                        strSug += "趕快結婚";
                     else
                         strSug += "開始找對象";
                     break;
