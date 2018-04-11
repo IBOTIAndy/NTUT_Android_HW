@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="@string/prompt_com_play"
         android:layout_below="@id/txtTitle"
-        android:layout_alignLeft="@id/txtTitle"
+        android:layout_alignRight="@id/txtTitle"
         android:textSize="20sp"
         android:layout_marginBottom="20dp" />
 
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="@string/prompt_my_play"
         android:layout_below="@id/txtTitle"
-        android:layout_alignRight="@id/txtTitle"
+        android:layout_alignLeft="@id/txtTitle"
         android:textSize="20sp"
         android:layout_marginBottom="20dp" />
 
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:text="@string/result"
         android:layout_below="@id/btnPaper"
-        android:layout_alignLeft="@id/txtCom"
+        android:layout_alignLeft="@id/txtMyPlay"
         android:textSize="20sp"
         android:textColor="#0000FF"
         android:layout_marginTop="20dp" />
