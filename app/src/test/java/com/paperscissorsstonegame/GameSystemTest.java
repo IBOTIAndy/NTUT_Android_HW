@@ -24,6 +24,49 @@ public class GameSystemTest {
 
     @Test
     public void testGameSystem() {
-        
+        gs.setMyChoice(1);
+        gs.setComChoice(1);
+        gs.judge();
+        assertEquals(2, gs.getResult());
+
+        gs.setMyChoice(1);
+        gs.setComChoice(2);
+        gs.judge();
+        assertEquals(0, gs.getResult());
+
+        gs.setMyChoice(1);
+        gs.setComChoice(3);
+        gs.judge();
+        assertEquals(1, gs.getResult());
+
+        gs.setMyChoice(2);
+        gs.setComChoice(1);
+        gs.judge();
+        assertEquals(1, gs.getResult());
+
+        gs.setMyChoice(2);
+        gs.setComChoice(2);
+        gs.judge();
+        assertEquals(2, gs.getResult());
+
+        gs.setMyChoice(2);
+        gs.setComChoice(3);
+        gs.judge();
+        assertEquals(0, gs.getResult());
+
+        gs.setMyChoice(3);
+        gs.setComChoice(1);
+        gs.judge();
+        assertEquals(0, gs.getResult());
+
+        gs.setMyChoice(3);
+        gs.setComChoice(2);
+        gs.judge();
+        assertEquals(1, gs.getResult());
+
+        gs.setMyChoice(3);
+        gs.setComChoice(3);
+        gs.judge();
+        assertEquals(2, gs.getResult());
     }
 }
