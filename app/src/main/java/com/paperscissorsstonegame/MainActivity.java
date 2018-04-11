@@ -29,73 +29,49 @@ public class MainActivity extends AppCompatActivity {
 
     private View.OnClickListener btnScissorsOnClick = new View.OnClickListener() {
         public void onClick(View v) {
-            // 決定電腦出拳.
-            int iComPlay = (int)(Math.random()*3 + 1);
+            // 玩家出剪刀
+            GameSystem game = new GameSystem();
+            game.playGame(1);
 
-            // 1 – 剪刀, 2 – 石頭, 3 – 布.
-            if (iComPlay == 1) {
-                mTxtComPlay.setText(R.string.play_scissors);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_draw));
-            }
-            else if (iComPlay == 2) {
-                mTxtComPlay.setText(R.string.play_stone);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_lose));
-            }
-            else {
-                mTxtComPlay.setText(R.string.play_paper);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_win));
-            }
+            // 顯示電腦的選擇
+            String strComChoice[] = {getString(R.string.play_scissors), getString(R.string.play_stone), getString(R.string.play_paper)};
+            mTxtComPlay.setText(strComChoice[game.getComChoice() - 1]);
+
+            // 顯示結果
+            String strResults[] = {getString(R.string.player_lose), getString(R.string.player_win), getString(R.string.player_draw)};
+            mTxtResult.setText(getString(R.string.result) + strResults[game.getResult()]);
         }
     };
 
     private View.OnClickListener btnStoneOnClick = new View.OnClickListener() {
         public void onClick(View v) {
-            // 決定電腦出拳.
-            int iComPlay = (int)(Math.random()*3 + 1);
+            // 玩家出石頭
+            GameSystem game = new GameSystem();
+            game.playGame(2);
 
-            // 1 – 剪刀, 2 – 石頭, 3 – 布.
-            if (iComPlay == 1) {
-                mTxtComPlay.setText(R.string.play_scissors);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_win));
-            }
-            else if (iComPlay == 2) {
-                mTxtComPlay.setText(R.string.play_stone);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_draw));
-            }
-            else {
-                mTxtComPlay.setText(R.string.play_paper);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_lose));
-            }
+            // 顯示電腦的選擇
+            String strComChoice[] = {getString(R.string.play_scissors), getString(R.string.play_stone), getString(R.string.play_paper)};
+            mTxtComPlay.setText(strComChoice[game.getComChoice() - 1]);
+
+            // 顯示結果
+            String strResults[] = {getString(R.string.player_lose), getString(R.string.player_win), getString(R.string.player_draw)};
+            mTxtResult.setText(getString(R.string.result) + strResults[game.getResult()]);
         }
     };
 
     private View.OnClickListener btnPaperOnClick = new View.OnClickListener() {
         public void onClick(View v) {
-            // 決定電腦出拳.
-            int iComPlay = (int)(Math.random()*3 + 1);
+            // 玩家出布
+            GameSystem game = new GameSystem();
+            game.playGame(3);
 
-            // 1 – 剪刀, 2 – 石頭, 3 – 布.
-            if (iComPlay == 1) {
-                mTxtComPlay.setText(R.string.play_scissors);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_lose));
-            }
-            else if (iComPlay == 2) {
-                mTxtComPlay.setText(R.string.play_stone);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_win));
-            }
-            else {
-                mTxtComPlay.setText(R.string.play_paper);
-                mTxtResult.setText(getString(R.string.result) +
-                        getString(R.string.player_draw));
-            }
+            // 顯示電腦的選擇
+            String strComChoice[] = {getString(R.string.play_scissors), getString(R.string.play_stone), getString(R.string.play_paper)};
+            mTxtComPlay.setText(strComChoice[game.getComChoice() - 1]);
+
+            // 顯示結果
+            String strResults[] = {getString(R.string.player_lose), getString(R.string.player_win), getString(R.string.player_draw)};
+            mTxtResult.setText(getString(R.string.result) + strResults[game.getResult()]);
         }
     };
 }
