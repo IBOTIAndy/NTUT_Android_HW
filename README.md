@@ -8,4 +8,4 @@
 
 ## HW4.1 興趣調查
 
-![demo_image](https://gitea.ntut.com.tw/PinLin/NTUT_Android_HW/raw/branch/HW4.1/image/demo.png)
+![demo_image](https://github.com/PinLin/NTUT_Android_HW/raw/HW4.1/image/demo.png)
