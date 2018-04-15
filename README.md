@@ -8,4 +8,4 @@
 
 ## HW4.2 電腦猜拳遊戲
 
-![demo_image](https://gitea.ntut.com.tw/PinLin/NTUT_Android_HW/raw/branch/HW4.2/image/demo.png)
+![demo_image](https://github.com/PinLin/NTUT_Android_HW/raw/HW4.2/image/demo.png)
