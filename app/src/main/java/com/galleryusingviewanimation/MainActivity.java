@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements ViewSwitcher.View
                                         View v,
                                         int position,
                                         long id) {
-                    switch ((int)(Math.random()*3 + 1)) {
+                    switch ((int)(Math.random()*4 + 1)) {
                         case 1:
                             mImgSwitcher.setInAnimation(AnimationUtils.loadAnimation(MainActivity.this,
                                     R.anim.alpha_in));
@@ -86,6 +86,12 @@ public class MainActivity extends AppCompatActivity implements ViewSwitcher.View
                                     R.anim.scale_rotate_in));
                             mImgSwitcher.setOutAnimation(AnimationUtils.loadAnimation(MainActivity.this,
                                     R.anim.scale_rotate_out));
+                            break;
+                        case 4:
+                            mImgSwitcher.setInAnimation(AnimationUtils.loadAnimation(MainActivity.this,
+                                    R.anim.scale_rotate_trans_in));
+                            mImgSwitcher.setOutAnimation(AnimationUtils.loadAnimation(MainActivity.this,
+                                    R.anim.scale_rotate_trans_out));
                             break;
                     }
 
