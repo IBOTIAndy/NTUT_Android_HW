@@ -20,12 +20,14 @@ public class MainActivity extends AppCompatActivity implements ViewSwitcher.View
     private Integer[] miImgArr = {
             R.drawable.img01, R.drawable.img02, R.drawable.img03,
             R.drawable.img04, R.drawable.img05, R.drawable.img06,
-            R.drawable.img07, R.drawable.img08};
+            R.drawable.img07, R.drawable.img08, R.drawable.img09,
+            R.drawable.img10, R.drawable.img11, R.drawable.img12};
 
     private Integer[] miThumbImgArr = {
             R.drawable.img01th, R.drawable.img02th, R.drawable.img03th,
             R.drawable.img04th, R.drawable.img05th, R.drawable.img06th,
-            R.drawable.img07th, R.drawable.img08th};
+            R.drawable.img07th, R.drawable.img08th, R.drawable.img09th,
+            R.drawable.img10th, R.drawable.img11th, R.drawable.img12th};
 
 
     @Override
