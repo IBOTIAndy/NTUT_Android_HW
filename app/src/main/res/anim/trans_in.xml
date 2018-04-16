@@ -5,4 +5,4 @@
     android:toXDelta="0"
     android:fromYDelta="-300"
     android:toYDelta="0"
-    android:duration="3000" />
+    android:duration="1000" />
