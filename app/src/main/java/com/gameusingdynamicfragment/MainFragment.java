@@ -1,7 +1,9 @@
 package com.gameusingdynamicfragment;
 
 import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -114,38 +116,57 @@ public class MainFragment extends Fragment {
         mBtnHiddenResult.setOnClickListener(btnHiddenResultOnClick);
     }
 
+    private void throwDice() {
+        // 全部局數 +1
+        miCountSet++;
+
+        // 骰子擲出來的點數
+        int score = (int)(Math.random() * 6 + 1);
+
+        // 顯示擲出來的圖
+        mImgBtnDice.setImageDrawable(getResources().getDrawable(diceStatus[score - 1]));
+
+        // 5、6 是電腦贏
+        if (score >= 5) {
+            // 電腦贏 +1
+            miCountComWin++;
+            mTxtResult.setText(getString(R.string.player_lose));
+        }
+        // 3、4 是平手
+        else if (score >= 3) {
+            // 平手 +1
+            miCountDraw++;
+            mTxtResult.setText(getString(R.string.player_draw));
+        }
+        // 1、2 是玩家贏
+        else {
+            // 玩家贏 +1
+            miCountPlayerWin++;
+            mTxtResult.setText(getString(R.string.player_win));
+        }
+
+        // 要把結果傳回去
+        mCallback.updateGameResult(miCountSet, miCountPlayerWin, miCountComWin, miCountDraw);
+    }
+
     private View.OnClickListener imgBtnDiceOnClick = new View.OnClickListener() {
-        public void  onClick(View v) {
-            // 全部局數 +1
-            miCountSet++;
-
-            // 骰子擲出來的點數
-            int score = (int)(Math.random() * 6 + 1);
-
-            // 顯示擲出來的圖
-            mImgBtnDice.setImageDrawable(getResources().getDrawable(diceStatus[score - 1]));
-
-            // 5、6 是電腦贏
-            if (score >= 5) {
-                // 電腦贏 +1
-                miCountComWin++;
-                mTxtResult.setText(getString(R.string.player_lose));
-            }
-            // 3、4 是平手
-            else if (score >= 3) {
-                // 平手 +1
-                miCountDraw++;
-                mTxtResult.setText(getString(R.string.player_draw));
-            }
-            // 1、2 是玩家贏
-            else {
-                // 玩家贏 +1
-                miCountPlayerWin++;
-                mTxtResult.setText(getString(R.string.player_win));
-            }
-
-            // 要把結果傳回去
-            mCallback.updateGameResult(miCountSet, miCountPlayerWin, miCountComWin, miCountDraw);
+        public void onClick(View v) {
+            // 取得動畫
+            final AnimationDrawable animation = (AnimationDrawable) getResources().getDrawable(R.drawable.anim_roll_dice);
+            // 設定顯示動畫
+            mImgBtnDice.setImageDrawable(animation);
+            // 動畫開始
+            animation.start();
+            // 宣告 Handler
+            Handler handler = new Handler();
+            // 一秒鐘後停止動畫且擲出點數
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    animation.stop();
+                    throwDice();
+                }
+            }, 1000);
         }
     };
 
