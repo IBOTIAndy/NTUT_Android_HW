@@ -6,5 +6,6 @@
 
 用不同的分支來存不同的作業！
 
-## HW# 
+## HW6 擲骰子
 
+![](https://i.imgur.com/dn7XCB7.jpg)
