@@ -3,6 +3,7 @@ package com.gameusingdynamicfragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 public class ResultActivity extends AppCompatActivity {
@@ -29,5 +30,14 @@ public class ResultActivity extends AppCompatActivity {
         mEdtCountComWin.setText(String.valueOf(intent.getIntExtra("CountComWin", 0)));
         mEdtCountDraw.setText(String.valueOf(intent.getIntExtra("CountDraw", 0)));
 
+        findViewById(R.id.btnBack).setOnClickListener(btnBack_OnClick);
+
     }
+
+    View.OnClickListener btnBack_OnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            finish();
+        }
+    };
 }
