@@ -55,8 +55,7 @@ public class MainFragment extends Fragment {
                 miCountComWin = 0,
                 miCountDraw = 0;
 
-    private Button mBtnShowResult1,
-                    mBtnHiddenResult;
+    private Button mBtnShowResult1;
 
     private boolean mbShowResult = false;
 
@@ -105,11 +104,9 @@ public class MainFragment extends Fragment {
 
         mImgBtnDice = (ImageButton) getView().findViewById(R.id.imgBtnDice);
         mBtnShowResult1 = (Button) getView().findViewById(R.id.btnShowResult1);
-        mBtnHiddenResult = (Button) getView().findViewById(R.id.btnHiddenResult);
 
         mImgBtnDice.setOnClickListener(imgBtnDiceOnClick);
         mBtnShowResult1.setOnClickListener(btnShowResult1OnClick);
-        mBtnHiddenResult.setOnClickListener(btnHiddenResultOnClick);
     }
 
     private void throwDice() {
@@ -172,12 +169,6 @@ public class MainFragment extends Fragment {
     private View.OnClickListener btnShowResult1OnClick = new View.OnClickListener() {
         public void onClick(View v) {
             mCallback.enableGameResult(GameResultType.TYPE_1);
-        }
-    };
-
-    private View.OnClickListener btnHiddenResultOnClick = new View.OnClickListener() {
-        public void onClick(View v) {
-            mCallback.enableGameResult(GameResultType.HIDE);
         }
     };
 

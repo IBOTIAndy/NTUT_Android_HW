@@ -12,8 +12,6 @@
     <string name="comupter_win_set">電腦贏：</string>
     <string name="draw">平手：</string>
 
-    <string name="btn_show_result1">顯示結果 1</string>
-    <string name="btn_show_result2">顯示結果 2</string>
-    <string name="btn_hidden_result">隱藏結果</string>
+    <string name="btn_show_result1">顯示結果</string>
 
 </resources>
