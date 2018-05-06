@@ -15,17 +15,12 @@ import android.widget.Toast;
 
 public class MainFragment extends Fragment {
 
-    public enum GameResultType {
-        TYPE_1, HIDE
-    }
-
     // 所屬的 Activity 必須實作以下介面中的callback方法
     public interface CallbackInterface {
         public void updateGameResult(int iCountSet,
                                      int iCountPlayerWin,
                                      int iCountComWin,
                                      int iCountDraw);
-        public void enableGameResult(GameResultType type);
     };
 
     private CallbackInterface mCallback;
@@ -135,9 +130,6 @@ public class MainFragment extends Fragment {
             String result = getString(R.string.player_win);
             Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
         }
-
-        // 要把結果傳回去
-        mCallback.updateGameResult(miCountSet, miCountPlayerWin, miCountComWin, miCountDraw);
     }
 
     private View.OnClickListener btnDrawDiceOnClick = new View.OnClickListener() {
@@ -163,7 +155,9 @@ public class MainFragment extends Fragment {
 
     private View.OnClickListener btnShowResultOnClick = new View.OnClickListener() {
         public void onClick(View v) {
-            mCallback.enableGameResult(GameResultType.TYPE_1);
+
+            // 要把結果傳回去
+            mCallback.updateGameResult(miCountSet, miCountPlayerWin, miCountComWin, miCountDraw);
         }
     };
 

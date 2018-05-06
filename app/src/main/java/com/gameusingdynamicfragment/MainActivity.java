@@ -1,5 +1,6 @@
 package com.gameusingdynamicfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -10,7 +11,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Call
 
     private final static String TAG = "Result";
     private int mTagCount = 0;
-    public MainFragment.GameResultType mGameResultType;
     public Fragment fragResult;
 
     @Override
@@ -21,44 +21,13 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Call
 
     @Override
     public void updateGameResult(int iCountSet, int iCountPlayerWin, int iCountComWin, int iCountDraw) {
-        if (findViewById(R.id.frameLay).isShown()) {
-            switch (mGameResultType) {
-                case TYPE_1:
-                    ((GameResultFragment) fragResult).updateGameResult(iCountSet, iCountPlayerWin,
-                            iCountComWin, iCountDraw);
-                    break;
-        }
+
+        Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("CountSet", iCountSet);
+        intent.putExtra("CountPlayerWin", iCountPlayerWin);
+        intent.putExtra("CountComWin", iCountComWin);
+        intent.putExtra("CountDraw", iCountDraw);
+        startActivity(intent);
     }
 
-    }
-
-    @Override
-    public void enableGameResult(MainFragment.GameResultType type) {
-        FragmentTransaction fragTran;
-        String sFragTag;
-
-        switch (type) {
-            case TYPE_1:
-                GameResultFragment frag = new GameResultFragment();
-                fragTran = getSupportFragmentManager().beginTransaction();
-                mTagCount++;
-                sFragTag = TAG + new Integer(mTagCount).toString();
-                fragTran.replace(R.id.frameLay, frag, sFragTag);
-                fragTran.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragTran.addToBackStack(null);
-                fragTran.commit();
-                break;
-            case HIDE:
-                FragmentManager fragMgr = getSupportFragmentManager();
-                sFragTag = TAG + new Integer(mTagCount).toString();
-                Fragment fragGameResult = fragMgr.findFragmentByTag(sFragTag);
-                fragTran = fragMgr.beginTransaction();
-                fragTran.remove(fragGameResult);
-                fragTran.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragTran.addToBackStack(null);
-                fragTran.commit();
-                break;
-        }
-
-    }
 }
