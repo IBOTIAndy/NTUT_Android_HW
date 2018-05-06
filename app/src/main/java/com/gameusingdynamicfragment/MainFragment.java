@@ -6,16 +6,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainFragment extends Fragment {
@@ -55,7 +50,7 @@ public class MainFragment extends Fragment {
                 miCountComWin = 0,
                 miCountDraw = 0;
 
-    private Button mBtnShowResult1;
+    private Button mBtnShowResult;
 
     private boolean mbShowResult = false;
 
@@ -103,10 +98,10 @@ public class MainFragment extends Fragment {
 */
 
         mImgBtnDice = (ImageButton) getView().findViewById(R.id.imgBtnDice);
-        mBtnShowResult1 = (Button) getView().findViewById(R.id.btnShowResult1);
+        mBtnShowResult = (Button) getView().findViewById(R.id.btnShowResult);
 
         mImgBtnDice.setOnClickListener(imgBtnDiceOnClick);
-        mBtnShowResult1.setOnClickListener(btnShowResult1OnClick);
+        mBtnShowResult.setOnClickListener(btnShowResult1OnClick);
     }
 
     private void throwDice() {
