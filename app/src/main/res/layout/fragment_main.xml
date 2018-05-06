@@ -34,14 +34,26 @@
         android:paddingRight="10dp" />
 
     <Button
+        android:id="@+id/btnDrawDice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/txtTitle"
+        android:layout_alignStart="@id/txtTitle"
+        android:layout_below="@+id/imgBtnDice"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/btn_draw_dice"
+        android:textSize="20sp" />
+
+    <Button
         android:id="@+id/btnShowResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@id/txtTitle"
         android:layout_alignEnd="@id/txtTitle"
         android:layout_below="@+id/imgBtnDice"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
         android:text="@string/btn_show_result"
         android:textSize="20sp" />
 
