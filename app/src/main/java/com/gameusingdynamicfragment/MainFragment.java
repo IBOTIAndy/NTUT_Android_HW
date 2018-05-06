@@ -20,7 +20,7 @@ import android.widget.TextView;
 public class MainFragment extends Fragment {
 
     public enum GameResultType {
-        TYPE_1, TYPE_2, HIDE
+        TYPE_1, HIDE
     }
 
     // 所屬的 Activity 必須實作以下介面中的callback方法
@@ -56,7 +56,6 @@ public class MainFragment extends Fragment {
                 miCountDraw = 0;
 
     private Button mBtnShowResult1,
-                    mBtnShowResult2,
                     mBtnHiddenResult;
 
     private boolean mbShowResult = false;
@@ -107,12 +106,10 @@ public class MainFragment extends Fragment {
 
         mImgBtnDice = (ImageButton) getView().findViewById(R.id.imgBtnDice);
         mBtnShowResult1 = (Button) getView().findViewById(R.id.btnShowResult1);
-        mBtnShowResult2 = (Button) getView().findViewById(R.id.btnShowResult2);
         mBtnHiddenResult = (Button) getView().findViewById(R.id.btnHiddenResult);
 
         mImgBtnDice.setOnClickListener(imgBtnDiceOnClick);
         mBtnShowResult1.setOnClickListener(btnShowResult1OnClick);
-        mBtnShowResult2.setOnClickListener(btnShowResult2OnClick);
         mBtnHiddenResult.setOnClickListener(btnHiddenResultOnClick);
     }
 
@@ -173,12 +170,6 @@ public class MainFragment extends Fragment {
     private View.OnClickListener btnShowResult1OnClick = new View.OnClickListener() {
         public void onClick(View v) {
             mCallback.enableGameResult(GameResultType.TYPE_1);
-        }
-    };
-
-    private View.OnClickListener btnShowResult2OnClick = new View.OnClickListener() {
-        public void onClick(View v) {
-            mCallback.enableGameResult(GameResultType.TYPE_2);
         }
     };
 

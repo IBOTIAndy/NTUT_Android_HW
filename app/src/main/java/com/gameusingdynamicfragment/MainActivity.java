@@ -27,10 +27,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Call
                     ((GameResultFragment) fragResult).updateGameResult(iCountSet, iCountPlayerWin,
                             iCountComWin, iCountDraw);
                     break;
-                case TYPE_2:
-                    ((GameResult2Fragment) fragResult).updateGameResult(iCountSet, iCountPlayerWin,
-                            iCountComWin, iCountDraw);
-                    break;
         }
     }
 
@@ -48,16 +44,6 @@ public class MainActivity extends AppCompatActivity implements MainFragment.Call
                 mTagCount++;
                 sFragTag = TAG + new Integer(mTagCount).toString();
                 fragTran.replace(R.id.frameLay, frag, sFragTag);
-                fragTran.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-                fragTran.addToBackStack(null);
-                fragTran.commit();
-                break;
-            case TYPE_2:
-                GameResult2Fragment frag2 = new GameResult2Fragment();
-                fragTran = getSupportFragmentManager().beginTransaction();
-                mTagCount++;
-                sFragTag = TAG + new Integer(mTagCount).toString();
-                fragTran.replace(R.id.frameLay, frag2, sFragTag);
                 fragTran.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragTran.addToBackStack(null);
                 fragTran.commit();
