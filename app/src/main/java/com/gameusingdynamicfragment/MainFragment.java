@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainFragment extends Fragment {
 
@@ -35,7 +36,6 @@ public class MainFragment extends Fragment {
     private CallbackInterface mCallback;
 
     private ImageButton mImgBtnDice;
-    private TextView mTxtResult;
 /*
     public EditText mEdtCountSet,
                     mEdtCountPlayerWin,
@@ -92,7 +92,6 @@ public class MainFragment extends Fragment {
 
         // 必須先呼叫getView()取得程式畫面物件，然後才能呼叫它的
         // findViewById()取得介面物件
-        mTxtResult = (TextView) getView().findViewById(R.id.txtResult);
         mImgBtnDice = (ImageButton) getView().findViewById(R.id.imgBtnDice);
 
         // 以下介面元件是在另一個Fragment中，因此必須呼叫所屬的Activity
@@ -127,19 +126,22 @@ public class MainFragment extends Fragment {
         if (score >= 5) {
             // 電腦贏 +1
             miCountComWin++;
-            mTxtResult.setText(getString(R.string.player_lose));
+            String result = getString(R.string.player_lose);
+            Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
         }
         // 3、4 是平手
         else if (score >= 3) {
             // 平手 +1
             miCountDraw++;
-            mTxtResult.setText(getString(R.string.player_draw));
+            String result = getString(R.string.player_draw);
+            Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
         }
         // 1、2 是玩家贏
         else {
             // 玩家贏 +1
             miCountPlayerWin++;
-            mTxtResult.setText(getString(R.string.player_win));
+            String result = getString(R.string.player_win);
+            Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
         }
 
         // 要把結果傳回去
