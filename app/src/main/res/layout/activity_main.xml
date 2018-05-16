@@ -17,6 +17,46 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="@string/date_title" />
+
+        <EditText
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="date" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="-25dp"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginEnd="-25dp"
+        android:layout_marginRight="-25dp"
+        android:orientation="horizontal">
+
+        <DatePicker
+            android:id="@+id/dpkDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/category_title" />
 
         <Spinner
@@ -36,39 +76,15 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/date_title" />
+            android:text="@string/cost_title" />
 
         <EditText
-            android:id="@+id/txtDate"
+            android:id="@+id/txtCost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="date" />
+            android:inputType="number" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-10dp"
-        android:layout_marginLeft="-10dp"
-        android:layout_marginEnd="-10dp"
-        android:layout_marginRight="-10dp"
-        android:orientation="horizontal">
-
-        <DatePicker
-            android:id="@+id/dpkDate"
-            android:layout_width="440dp"
-            android:layout_height="wrap_content"
-            android:datePickerMode="spinner">
-
-        </DatePicker>
-
-        <CalendarView
-            android:id="@+id/cldDate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
     </LinearLayout>
 </LinearLayout>
