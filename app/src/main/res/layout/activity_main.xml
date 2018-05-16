@@ -17,7 +17,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/date_title" />
+            android:text="@string/title_date" />
 
         <EditText
             android:id="@+id/txtDate"
@@ -51,13 +51,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/category_title" />
+            android:text="@string/title_category" />
 
         <Spinner
             android:id="@+id/spnCategory"
@@ -70,13 +71,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/cost_title" />
+            android:text="@string/title_cost" />
 
         <EditText
             android:id="@+id/txtCost"
@@ -86,5 +88,26 @@
             android:ems="10"
             android:inputType="number" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_add" />
+
+        <Button
+            android:id="@+id/btnSee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_see" />
     </LinearLayout>
 </LinearLayout>

@@ -1,15 +1,17 @@
 <resources>
     <string name="app_name">作業八 by林凭</string>
 
-    <string name="category_title">項目：</string>
+    <string name="title_category">項目：</string>
+    <string name="title_date">日期：</string>
+    <string name="title_cost">金額：</string>
+
     <array name="category">
         <item>早餐</item>
         <item>午餐</item>
         <item>晚餐</item>
     </array>
 
-    <string name="date_title">日期：</string>
-
-    <string name="cost_title">金額：</string>
+    <string name="btn_add">新增一筆</string>
+    <string name="btn_see">查看記錄</string>
 
 </resources>
