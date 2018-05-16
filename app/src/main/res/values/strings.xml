@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">作業八 by林凭</string>
+
+    <string name="category_title">項目：</string>
+    <array name="category">
+        <item>早餐</item>
+        <item>午餐</item>
+        <item>晚餐</item>
+    </array>
+
+    <string name="date_title">日期：</string>
+
 </resources>
