@@ -71,14 +71,14 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             // 取得新一筆資料
-            String count = "項目 " + String.valueOf(dataCount);
+            String count = "項目 " + String.valueOf(dataCount++);
             String date = mTxtDate.getText().toString();
             String category = mSpnCategory.getSelectedItem().toString();
             String cost = mTxtCost.getText().toString();
             // 用 Toast 顯示金額
             Toast.makeText(MainActivity.this, cost, Toast.LENGTH_SHORT).show();
             // 存入 ArrayList
-            dataList.add(count + "\t" + date + "\t" + category + "\t" + cost);
+            dataList.add(count + "            " + date + "            " + category + "            " + cost);
         }
     };
 
