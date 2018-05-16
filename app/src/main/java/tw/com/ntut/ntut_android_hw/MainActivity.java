@@ -42,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
     private DatePicker.OnDateChangedListener dpkDateOnDataChangedListener = new DatePicker.OnDateChangedListener() {
         @Override
         public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+            // 取得使用者選擇的日期
+            String result = String.valueOf(year) + "/"  + String.valueOf(monthOfYear + 1) + "/" + String.valueOf(dayOfMonth);
+            // 顯示在文字框裡
+            mTxtDate.setText(result);
         }
     };
 
