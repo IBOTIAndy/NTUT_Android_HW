@@ -9,18 +9,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mTxtCost;
-    TextView mTxtDate;
+    private TextView mTxtCost;
+    private TextView mTxtDate;
 
-    DatePicker mDpkDate;
-    Spinner mSpnCategory;
+    private DatePicker mDpkDate;
+    private Spinner mSpnCategory;
 
-    Button mBtnAdd;
-    Button mBtnSee;
+    private Button mBtnAdd;
+    private Button mBtnSee;
+
+    private ArrayList<String> dataList;
+    private int dataCount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         mDpkDate.setOnDateChangedListener(dpkDateOnDataChangedListener);
         mBtnAdd.setOnClickListener(btnAddOnClickListener);
         mBtnSee.setOnClickListener(btnSeeOnClickListener);
+
+        dataList = new ArrayList<>();
+        dataCount = 0;
     }
 
     private DatePicker.OnDateChangedListener dpkDateOnDataChangedListener = new DatePicker.OnDateChangedListener() {
@@ -52,7 +59,15 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btnAddOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "2", Toast.LENGTH_SHORT).show();
+            // 取得新一筆資料
+            String count = "項目 " + String.valueOf(dataCount);
+            String date = mTxtDate.getText().toString();
+            String category = mSpnCategory.getSelectedItem().toString();
+            String cost = mTxtCost.getText().toString();
+            // 用 Toast 顯示金額
+            Toast.makeText(MainActivity.this, cost, Toast.LENGTH_SHORT).show();
+            // 存入 ArrayList
+            dataList.add(count + "\t" + date + "\t" + category + "\t" + cost);
         }
     };
 
