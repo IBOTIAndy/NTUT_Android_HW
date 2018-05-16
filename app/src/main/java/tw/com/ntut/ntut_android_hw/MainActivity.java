@@ -60,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btnAddOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            // 日期防呆
+            if (mTxtDate.getText().toString().equals("")) {
+                Toast.makeText(MainActivity.this, "請輸入日期", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // 金額防呆
+            if (mTxtCost.getText().toString().equals("")) {
+                Toast.makeText(MainActivity.this, "請輸入金額", Toast.LENGTH_SHORT).show();
+                return;
+            }
             // 取得新一筆資料
             String count = "項目 " + String.valueOf(dataCount);
             String date = mTxtDate.getText().toString();
