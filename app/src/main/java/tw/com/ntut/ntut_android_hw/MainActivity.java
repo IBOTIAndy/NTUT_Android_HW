@@ -1,5 +1,6 @@
 package tw.com.ntut.ntut_android_hw;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener btnSeeOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Toast.makeText(MainActivity.this, "3", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, RecordActivity.class);
+            intent.putExtra("dataList", dataList);
+            startActivity(intent);
         }
     };
 }
