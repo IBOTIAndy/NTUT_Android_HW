@@ -6,7 +6,7 @@
 
 用不同的分支來存不同的作業！
 
-## HW7 擲骰子進階版
+## HW7 擲骰子（進階）
 
 ![demo1](https://i.imgur.com/qFDNLyi.jpg)
 ![demo2](https://i.imgur.com/PMELidt.jpg)
