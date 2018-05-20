@@ -6,6 +6,6 @@
 
 用不同的分支來存不同的作業！
 
-## HW4.2 電腦猜拳遊戲
+## HW4.2 猜拳遊戲
 
-![demo_image](https://github.com/PinLin/NTUT_Android_HW/raw/HW4.2/image/demo.png)
+![demo](https://github.com/PinLin/NTUT_Android_HW/raw/HW4.2/image/demo.png)
