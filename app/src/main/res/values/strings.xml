@@ -14,4 +14,10 @@
     <string name="btn_add">新增一筆</string>
     <string name="btn_see">查看記錄</string>
 
+
+    <string name="menu_background_music">背景音樂</string>
+    <string name="menu_background_music_start">播放背景音樂</string>
+    <string name="menu_background_music_stop">停止背景音樂</string>
+    <string name="menu_background_about">關於這個程式</string>
+    <string name="menu_background_exit">結束</string>
 </resources>
