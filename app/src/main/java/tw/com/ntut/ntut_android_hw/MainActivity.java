@@ -1,5 +1,7 @@
 package tw.com.ntut.ntut_android_hw;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -117,19 +119,31 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_background_music_start:
                 intent = new Intent(MainActivity.this, MediaPlayService.class);
                 startService(intent);
-                return true;
+                break;
             case R.id.menu_background_music_stop:
                 intent = new Intent(MainActivity.this, MediaPlayService.class);
                 stopService(intent);
-                return true;
+                break;
             case R.id.menu_background_about:
-                return true;
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("關於這個程式")
+                        .setMessage("wow")
+                        .setCancelable(false)
+                        .setPositiveButton("確定",
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                })
+                        .show();
+                break;
             case R.id.menu_background_exit:
                 finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+                break;
+
         }
+        return true;
     }
 
     @Override
@@ -140,23 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()) {
-            case R.id.menu_background_music_start:
-                intent = new Intent(MainActivity.this, MediaPlayService.class);
-                startService(intent);
-                return true;
-            case R.id.menu_background_music_stop:
-                intent = new Intent(MainActivity.this, MediaPlayService.class);
-                stopService(intent);
-                return true;
-            case R.id.menu_background_about:
-                return true;
-            case R.id.menu_background_exit:
-                finish();
-                return true;
-            default:
-                return super.onContextItemSelected(item);
-        }
+        onOptionsItemSelected(item);
+        return true;
     }
 }
