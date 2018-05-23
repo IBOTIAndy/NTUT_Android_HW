@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -33,19 +34,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginStart="-25dp"
-        android:layout_marginLeft="-25dp"
         android:layout_marginEnd="-25dp"
+        android:layout_marginLeft="-25dp"
         android:layout_marginRight="-25dp"
+        android:layout_marginStart="-25dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <DatePicker
             android:id="@+id/dpkDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:datePickerMode="spinner"/>
+            android:datePickerMode="spinner" />
 
     </LinearLayout>
 

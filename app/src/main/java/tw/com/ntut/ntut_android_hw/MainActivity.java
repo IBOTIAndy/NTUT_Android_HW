@@ -3,11 +3,13 @@ package tw.com.ntut.ntut_android_hw;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    private LinearLayout mLinearLayout;
 
     private TextView mTxtCost;
     private TextView mTxtDate;
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mLinearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+
         mTxtCost = (TextView) findViewById(R.id.txtCost);
         mTxtDate = (TextView) findViewById(R.id.txtDate);
 
@@ -42,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         mBtnAdd = (Button) findViewById(R.id.btnAdd);
         mBtnSee = (Button) findViewById(R.id.btnSee);
+
+        registerForContextMenu(mLinearLayout);
 
         mDpkDate.setOnDateChangedListener(dpkDateOnDataChangedListener);
 
@@ -121,6 +129,34 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.menu_background_music_start:
+                intent = new Intent(MainActivity.this, MediaPlayService.class);
+                startService(intent);
+                return true;
+            case R.id.menu_background_music_stop:
+                intent = new Intent(MainActivity.this, MediaPlayService.class);
+                stopService(intent);
+                return true;
+            case R.id.menu_background_about:
+                return true;
+            case R.id.menu_background_exit:
+                finish();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
         }
     }
 }
