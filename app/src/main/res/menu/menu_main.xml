@@ -2,10 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:title="@string/menu_background_music">
         <menu>
-            <item android:title="@string/menu_background_music_start" />
-            <item android:title="@string/menu_background_music_stop" />
+            <item
+                android:id="@+id/menu_background_music_start"
+                android:title="@string/menu_background_music_start" />
+            <item
+                android:id="@+id/menu_background_music_stop"
+                android:title="@string/menu_background_music_stop" />
         </menu>
     </item>
-    <item android:title="@string/menu_background_about" />
-    <item android:title="@string/menu_background_exit" />
+    <item
+        android:id="@+id/menu_background_about"
+        android:title="@string/menu_background_about" />
+    <item
+        android:id="@+id/menu_background_exit"
+        android:title="@string/menu_background_exit" />
 </menu>
