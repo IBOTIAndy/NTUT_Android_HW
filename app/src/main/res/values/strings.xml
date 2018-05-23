@@ -20,4 +20,6 @@
     <string name="menu_background_music_stop">停止背景音樂</string>
     <string name="menu_background_about">關於這個程式</string>
     <string name="menu_background_exit">結束</string>
+
+    <string name="music_is_playing">音樂已經在播放中</string>
 </resources>
